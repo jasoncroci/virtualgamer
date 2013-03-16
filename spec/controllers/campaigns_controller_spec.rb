@@ -76,4 +76,29 @@ describe CampaignsController do
 
   end
 
+  describe "GET #show" do
+
+    before(:each) do
+      @campaign = FactoryGirl.create(:campaign)
+      Campaign.stub(:find).with(@campaign.id.to_s).and_return @campaign
+    end
+
+    it "responds successfully with an HTTP 200 status code" do
+      get :show, :id => @campaign.id
+      expect(response).to be_success
+      expect(response.code.to_i).to eq(200)
+    end
+
+    it "renders the show template" do
+      get :show, :id => @campaign.id
+      expect(response).to render_template("show")
+    end
+
+    it "finds the campaign" do
+      get :show, :id => @campaign.id
+      expect(assigns(:campaign)).to eq(@campaign)
+    end
+
+  end
+
 end

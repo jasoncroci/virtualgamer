@@ -3,5 +3,5 @@
 <p><%= link_to 'New Campaign', new_campaign_path %></p>
 
 <% @campaigns.each do |campaign| %>
-	<article><%= campaign.name %></article>
+	<article><%= link_to campaign.name, campaign_path(campaign) %></article>
 <% end %>
