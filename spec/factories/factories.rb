@@ -1,5 +1,9 @@
 FactoryGirl.define do
   
+  factory :campaign do
+    name "MockCampaign"
+  end
+
   factory :player do
   	race 1
   	class_name "Fighter"
