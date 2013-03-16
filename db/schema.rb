@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316171242) do
+ActiveRecord::Schema.define(:version => 20130316185817) do
 
   create_table "campaigns", :force => true do |t|
     t.string   "name"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(:version => 20130316171242) do
     t.integer  "race"
     t.string   "class_name"
     t.integer  "alignment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "campaign_id"
   end
 
 end

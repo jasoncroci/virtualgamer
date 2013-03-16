@@ -8,6 +8,7 @@ FactoryGirl.define do
   	race 1
   	class_name "Fighter"
   	alignment 1
+    campaign
   end
 
   factory :monster do
@@ -23,7 +24,6 @@ FactoryGirl.define do
     speed 30
     hit_points 100
     armor_class 20
-    association :shareable, factory: :player
   end
 
 end

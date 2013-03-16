@@ -1,0 +1,53 @@
+<%= form_for([@campaign,@player]) do |f| %>
+  <%= fields_for(:data_block, @data_block) do |s| %>
+
+    <p>
+      <%= s.label :name %>:
+      <%= s.text_field :name %>
+    </p>
+
+    <p>
+	  <%= f.label :race %>: 
+	  <%= select(:player, :race, RACES.sort.map {|name,id| [name, id] } ) %>
+	</p>
+
+	<p>
+	  <%= f.label :class_name %>: 
+	  <%= f.text_field :class_name, :size => 10 %>
+	</p>
+
+	<p>
+	  <%= f.label :aligment %>: 
+	  <%= select(:player, :alignment, ALIGNMENTS.sort.map {|name,id| [name, id] } ) %>
+	</p>
+
+    <p>
+      <%= s.label :size %>:
+      <%= s.select(:size, SIZES.sort.map {|name,id| [name, id] } ) %>
+    </p>
+
+    <p>
+      <%= s.label :level %>:
+      <%= s.text_field :level, :size => 5 %>
+    </p>
+
+    <p>
+      <%= s.label :speed %>:
+      <%= s.select(:speed, (1..19).map{|r| r*5 }) %>
+    </p>
+
+    <p>
+      <%= s.label :hit_points %>:
+      <%= s.text_field :hit_points, :size => 5 %>
+    </p>
+
+    <p>
+      <%= s.label :armor_class %>:
+      <%= s.text_field :armor_class, :size => 5 %>
+    </p>
+    
+  <% end %>
+
+  <p><%= f.submit %></p>
+ 
+<% end %>

@@ -1,5 +1,7 @@
 Virtualgamer::Application.routes.draw do
-  resources :campaigns
+  resources :campaigns do
+    resources :players
+  end
 
 
   # The priority is based upon order of creation:

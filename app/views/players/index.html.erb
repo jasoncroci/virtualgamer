@@ -1,0 +1,7 @@
+<header><%= @campaign.name %>'s players</header>
+
+<p><%= link_to 'Add player', new_campaign_player_path(@campaign) %></p>
+
+<% @players.each do |player| %>
+	<p><%= link_to(player.data_block.name, campaign_player_path(@campaign,player)) %></p>
+<% end %>

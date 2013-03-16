@@ -8,14 +8,24 @@ describe Campaign do
 
 	context "validations" do
 
-    describe "presence of" do
+	    describe "presence of" do
 
-  		it "should require name" do
-  		  @campaign.name = nil
-  		  expect(@campaign.valid?).to be_false
-  		end
+	  		it "should require name" do
+	  		  @campaign.name = nil
+	  		  expect(@campaign.valid?).to be_false
+	  		end
 
-    end
+	    end
+
+	end
+
+	context "associations" do
+
+	    it "should have many players" do
+        @players = [FactoryGirl.create(:player)]
+	  	  @campaign.players = @players
+	  	  expect(@campaign.players).to match_array(@players)
+	  	end
 
 	end
 
