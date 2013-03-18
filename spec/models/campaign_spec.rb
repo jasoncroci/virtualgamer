@@ -22,9 +22,15 @@ describe Campaign do
 	context "associations" do
 
 	    it "should have many players" do
-        @players = [FactoryGirl.create(:player)]
+          @players = [FactoryGirl.create(:player)]
 	  	  @campaign.players = @players
 	  	  expect(@campaign.players).to match_array(@players)
+	  	end
+
+	  	it "should have many encounters" do
+          @encounters = [FactoryGirl.create(:encounter)]
+	  	  @campaign.encounters = @encounters
+	  	  expect(@campaign.encounters).to match_array(@encounters)
 	  	end
 
 	end

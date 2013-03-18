@@ -1,0 +1,16 @@
+<header>New encounter</header>
+
+<%= form_for([@campaign,@encounter]) do |f| %>
+    <p>
+      <%= f.label :name %>:
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+	  <%= f.label :description %>: 
+	  <%= f.text_area :description, :rows => 5 %>
+	</p>
+
+  <p><%= f.submit %></p>
+ 
+<% end %>

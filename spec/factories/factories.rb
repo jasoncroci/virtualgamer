@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :monster do
   	display_name "Monster1"
-  	type "Beast"
+  	type 1
   	experience_points 1000
   end
 
@@ -24,6 +24,11 @@ FactoryGirl.define do
     speed 30
     hit_points 100
     armor_class 20
+  end
+
+  factory :encounter do
+    name "MockEncounter"
+    description "Some mock encounter description"
   end
 
 end

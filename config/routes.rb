@@ -1,6 +1,7 @@
 Virtualgamer::Application.routes.draw do
   resources :campaigns do
     resources :players
+    resources :encounters
   end
 
 

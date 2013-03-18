@@ -1,0 +1,7 @@
+<header><%= @campaign.name %>'s Encounters</header>
+
+<p><%= link_to 'Create encounter', new_campaign_encounter_path(@campaign) %></p>
+
+<% @encounters.each do |encounter| %>
+  <p><%= link_to encounter.name, campaign_encounter_path(@campaign,encounter) %></p>
+<% end %>
