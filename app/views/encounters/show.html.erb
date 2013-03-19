@@ -1,3 +1,5 @@
 <header><%= @encounter.name %></header>
 
 <p><%= @encounter.description %></p>
+
+<%= link_to 'Create map', new_encounter_map_path(@encounter) %>

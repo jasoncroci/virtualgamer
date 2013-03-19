@@ -31,4 +31,8 @@ FactoryGirl.define do
     description "Some mock encounter description"
   end
 
+  factory :map do
+    encounter
+  end
+
 end

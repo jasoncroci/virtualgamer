@@ -12,4 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require application
 //= require_tree .
+
+
+var VirtualGamer = {}; (function() {
+
+    VirtualGamer.Global = {
+        
+        extend: function(c1, c2) {
+            for(var key in c2.prototype) {
+                if(!( key in c1.prototype)) {
+                    c1.prototype[key] = c2.prototype[key];
+                }
+            }
+        },
+
+        isNotVacant: function(value){
+            return value != null && value != "";
+        }
+    };
+})();

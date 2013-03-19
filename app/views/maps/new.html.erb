@@ -1,0 +1,14 @@
+<header><%= @encounter.name %> map</header>
+
+<div id="container"></div>
+
+<script>
+
+	var renderEngine = new VirtualGamer.RenderEngine({
+		numTilesWide:  15,
+    	numTilesHigh: 15
+	});
+
+	renderEngine.draw();
+
+</script>

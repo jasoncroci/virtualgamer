@@ -26,6 +26,16 @@ describe Encounter do
 
 	context "associations" do
 
+		describe "map" do
+
+			it "should have one map" do
+        @map = FactoryGirl.create(:map)
+        @encounter.map = @map
+        expect(@encounter.map).to eq(@map)
+			end
+
+		end
+
 	end
 
 end
